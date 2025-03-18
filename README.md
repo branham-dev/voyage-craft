@@ -1,1 +1,1 @@
-# voyage-craft
+# React + Vite
