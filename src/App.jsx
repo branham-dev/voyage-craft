@@ -1,9 +1,14 @@
+import { Route, Routes } from "react-router-dom";
+import { Landing } from "./pages";
+
 function App() {
-	
-
-	
-
-	return <><h1 className="text-amber-600">Hello, world!</h1></>;
+	return (
+		<>
+			<Routes>
+				<Route path='/' element={<Landing />} />
+			</Routes>
+		</>
+	);
 }
 
 export default App;
