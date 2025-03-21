@@ -30,8 +30,8 @@ const LandingNavbar = () => {
 				</div>
 				{/* Mobile Sidebar */}
 				<aside
-					className={`bg-gunmetal/60 border border-platinum absolute text-anti-flash-white overflow-hidden top-30 left-0 py-6 flex flex-col gap-12 ${
-						isOpen ? "w-[100%] max-w-[300px] px-8" : "w-0 px-0"
+					className={`bg-gunmetal/60 border-none absolute text-anti-flash-white overflow-hidden top-30 left-0 py-6 flex flex-col gap-12 ${
+						isOpen ? "w-[100%] max-w-[300px] px-8" : "w-0 px-0 border-none"
 					}  md:hidden rounded-e-xl shadow-2xl backdrop-blur-lg transition-discrete duration-700`}>
 					<div className='flex flex-col gap-12 w-[60%] m-auto'>
 						<NavigationList className={"flex flex-col gap-12 text-2xl"} />

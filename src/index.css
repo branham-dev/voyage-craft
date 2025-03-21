@@ -13,12 +13,18 @@
 	--color-brand: #005fcc;
 	--color-platinum: #d9d9d9;
 	--color-anti-flash-white: #f7f9fc;
+	--color-deep-blue: #1e2a38;
+	--color-soft-gray: #4b5563;
 }
 
 .cus-w {
-	@apply w-11/12 m-auto;
+	@apply w-11/12 mx-auto;
 }
 
 .logo-properties {
 	@apply -ml-3 w-36;
+}
+
+.heading-2 {
+	@apply text-3xl font-playfair text-deep-blue;
 }
