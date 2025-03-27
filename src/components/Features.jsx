@@ -28,13 +28,17 @@ const Features = () => {
 		<section className='cus-w mt-18 pt-0.5'>
 			<h2 className='heading-2 mb-12 text-center'>Our Features</h2>
 			<div className='w-full flex flex-col lg:flex-row justify-between items-center lg:items-stretch lg:gap-2 gap-18'>
-				{ourFeatures.map((feature) => (
-					<article className='border border-platinum shadow-sm flex flex-col items-center gap-6 text-center py-12 lg:py-6 xl:py-12 px-6 max-w-[400px] lg:max-w-[335px] xl:max-w-[400px]'>
+				{ourFeatures.map((feature, index) => (
+					<article
+						key={index}
+						className='border border-platinum shadow-sm flex flex-col items-center gap-6 text-center py-12 lg:py-6 xl:py-12 px-6 max-w-[400px] lg:max-w-[335px] xl:max-w-[400px]'>
 						<feature.icon className='text-5xl lg:text-4xl xl:text-5xl text-brand' />
 						<h3 className='font-playfair text-deep-blue text-2xl lg:text-lg xl:text-2xl font-medium'>
 							{feature.title}
 						</h3>
-						<p className='font-inter text-soft-gray w-[80%] lg:w-full lg:text-sm xl:text-lg'>{feature.text}</p>
+						<p className='font-inter text-soft-gray w-[80%] lg:w-full lg:text-sm xl:text-lg'>
+							{feature.text}
+						</p>
 					</article>
 				))}
 			</div>

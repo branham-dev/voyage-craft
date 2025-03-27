@@ -1,12 +1,14 @@
-import { Features, Hero } from "../components";
+import { Features, Hero, TopDestinations } from "../components";
 
 const Landing = () => {
 	return (
-		<div className="bg-anti-flash-white min-h-screen">
+		<div className='bg-anti-flash-white min-h-screen'>
 			<Hero />
-			{/* <main> */}
+			<main className='mb-24'>
 				<Features />
-			{/* </main> */}
+				<TopDestinations />
+				
+			</main>
 		</div>
 	);
 };

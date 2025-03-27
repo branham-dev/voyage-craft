@@ -1,15 +1,18 @@
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-const fetchData = async (searchQuery) => {
-	try {
-		const response = await axios.get(`http://localhost:5000/api/tripadvisor/location/search`, {
-			params: { searchQuery, category: "hotels" },
-		});
-		const data = await response.data;
-		console.log(data);
-	} catch (error) {
-		console.error("Error fetching locations:", error.response?.data || error.message);
-		return null;
-	}
+
+const fetchData = async (endPoint, params) => {
+	const { data } = await axios.get(`http://localhost:5000/api/tripadvisor/${endPoint}`, {
+		params,
+	});
+	return data;
 };
 
-export { fetchData };
+const useFetch = (endPoint, params = {}) => {
+	return useQuery({
+		queryKey: [endPoint, params],
+		queryFn: () => fetchData(endPoint, params),
+	});
+};
+
+export default useFetch;
