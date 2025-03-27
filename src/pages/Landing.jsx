@@ -1,4 +1,4 @@
-import { Features, Hero, TopDestinations } from "../components";
+import { Features, FetchTest, Footer, Hero, TopDestinations } from "../components";
 
 const Landing = () => {
 	return (
@@ -7,8 +7,9 @@ const Landing = () => {
 			<main className='mb-24'>
 				<Features />
 				<TopDestinations />
-				
+				<FetchTest />
 			</main>
+			<Footer />
 		</div>
 	);
 };

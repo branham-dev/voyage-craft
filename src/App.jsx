@@ -6,6 +6,7 @@ function App() {
 		<>
 			<Routes>
 				<Route path='/' element={<Landing />} />
+				<Route path='/signin' element={<Landing />} />
 			</Routes>
 		</>
 	);

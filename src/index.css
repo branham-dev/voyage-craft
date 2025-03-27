@@ -11,10 +11,13 @@
 @theme {
 	--color-gunmetal: #1e2a38;
 	--color-brand: #005fcc;
+	--color-secondary: #ff8a00;
 	--color-platinum: #d9d9d9;
 	--color-anti-flash-white: #f7f9fc;
 	--color-deep-blue: #1e2a38;
 	--color-soft-gray: #4b5563;
+	--color-off-white: #f0f0f0;
+	--color-sub-secondary: #00b8d9;
 }
 
 .cus-w {
