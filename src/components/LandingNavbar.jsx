@@ -7,6 +7,13 @@ import { useState } from "react";
 const LandingNavbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
+	const items = [
+		["Home", "/"],
+		["Explore", "/explore"],
+		["Favorites", "/favorites"],
+		["About", "/about"],
+	];
+
 	return (
 		<nav>
 			<div>
@@ -24,7 +31,7 @@ const LandingNavbar = () => {
 					</button>
 					{/* Desktop Display */}
 					<div className='hidden md:flex bg-gunmetal px-8 py-3 font-inter text-lg rounded-full w-[70%] justify-between items-center'>
-						<NavigationList className='flex justify-around w-[75%]' />
+						<NavigationList className='flex justify-around w-[75%]' items={items}/>
 						<Button text={"Sign In"} />
 					</div>
 				</div>
@@ -34,7 +41,7 @@ const LandingNavbar = () => {
 						isOpen ? "w-[100%] max-w-[300px] px-8" : "w-0 px-0 border-none"
 					}  md:hidden rounded-e-xl shadow-2xl backdrop-blur-lg transition-discrete duration-700`}>
 					<div className='flex flex-col gap-12 w-[60%] m-auto'>
-						<NavigationList className={"flex flex-col gap-12 text-2xl"} />
+						<NavigationList className={"flex flex-col gap-12 text-2xl"} items={items}/>
 						<Button text={"Sign In"} className={"w-full whitespace-nowrap overflow-hidden"} />
 					</div>
 				</aside>

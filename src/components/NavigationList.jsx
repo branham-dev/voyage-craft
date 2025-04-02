@@ -1,12 +1,7 @@
 import { NavLink } from "react-router-dom";
 
-const NavigationList = ({className}) => {
-	const items = [
-		["Home", "/"],
-		["Explore", "/explore"],
-		["Favorites", "/favorites"],
-		["About", "/about"],
-	];
+const NavigationList = ({className, items}) => {
+	
 
 	return (
 		<ul className={className}>

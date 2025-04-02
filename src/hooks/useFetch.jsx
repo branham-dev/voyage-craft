@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchData = async (endPoint, params) => {
@@ -8,10 +8,11 @@ const fetchData = async (endPoint, params) => {
 	return data;
 };
 
-const useFetch = (endPoint, params = {}) => {
+const useFetch = (endPoint, params = {}, options = {}) => {
 	return useQuery({
 		queryKey: [endPoint, params],
 		queryFn: () => fetchData(endPoint, params),
+		...options,
 	});
 };
 

@@ -78,8 +78,8 @@ const TopDestinations = () => {
 						)}
 						{photos && (
 							<img
-								src={photos.data[imageIndex].images.original.url}
-								alt={`Photo of ${photos.data[imageIndex].caption}`}
+								src={photos?.data[imageIndex].images?.original?.url}
+								alt={`Photo of ${photos?.data[imageIndex].caption}`}
 							/>
 						)}
 					</div>

@@ -3,7 +3,7 @@ import { Features, FetchTest, Footer, Hero, TopDestinations } from "../component
 const Landing = () => {
 	return (
 		<div className='bg-anti-flash-white min-h-screen'>
-			<Hero />
+            <Hero />
 			<main className='mb-24'>
 				<Features />
 				<TopDestinations />
