@@ -29,7 +29,7 @@ const Dashboard = () => {
 
 	const appNavigation = [
 		[TbMapSearch, "/", "Search Destination"],
-		[TbListDetails, "/", "View Details"],
+		[TbListDetails, "/dashboard/details/123", "View Details"],
 		[FaPhotoFilm, "/", "Location Photos"],
 		[MdOutlineReviews, "/", "User Reviews"],
 		[GrMapLocation, "/", "Nearby Search"],

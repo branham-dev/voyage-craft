@@ -1,3 +1,4 @@
 import Search from "./Search";
+import Details from "./Details";
 
-export { Search };
+export { Search, Details };
