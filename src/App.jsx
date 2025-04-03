@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Dashboard, Landing, SignIn } from "./pages";
-import { Details, Search } from "./Views";
+import { Details, Photos, Search } from "./Views";
 
 function App() {
 	return (
@@ -11,6 +11,7 @@ function App() {
 				<Route path='/dashboard' element={<Dashboard />}>
 					<Route index element={<Search />} />
 					<Route path='details/:id' element={<Details />} />
+					<Route path='photos/:id' element={<Photos />} />
 				</Route>
 			</Routes>
 		</>

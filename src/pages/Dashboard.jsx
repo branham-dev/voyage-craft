@@ -33,7 +33,7 @@ const Dashboard = () => {
 	const appNavigation = [
 		[TbMapSearch, `/dashboard`, "Search Destination"],
 		[TbListDetails, `/dashboard/details/${locationId}`, "View Details"],
-		[FaPhotoFilm, `/`, "Location Photos"],
+		[FaPhotoFilm, `/dashboard/photos/${locationId}`, "Location Photos"],
 		[MdOutlineReviews, "/", "User Reviews"],
 		[GrMapLocation, "/", "Nearby Search"],
 	];
