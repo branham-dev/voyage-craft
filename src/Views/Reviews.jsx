@@ -13,8 +13,8 @@ const Reviews = () => {
 			{isLoading && <p>Loading...</p>}
 			{isError && <p>There was an error.</p>}
 			{data &&
-				data.data.map((review) => (
-					<article>
+				data.data.map((review, index) => (
+					<article key={index}>
 						<div>
 							<figure>
 								<img src={review.user.avatar.thumbnail} alt='' />

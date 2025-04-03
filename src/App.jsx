@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Dashboard, Landing, SignIn } from "./pages";
-import { Details, Photos, Search, Reviews } from "./Views";
+import { Details, Photos, Search, Reviews, Nearby } from "./Views";
 
 function App() {
 	return (
@@ -13,6 +13,7 @@ function App() {
 					<Route path='details/:id' element={<Details />} />
 					<Route path='photos/:id' element={<Photos />} />
 					<Route path='reviews/:id' element={<Reviews />} />
+					<Route path='nearby/:nearbyId' element={<Nearby />} />
 				</Route>
 			</Routes>
 		</>

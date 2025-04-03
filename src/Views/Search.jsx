@@ -26,6 +26,7 @@ const Search = () => {
 	const [locationId, setLocationId] = useState(stateLocationId);
 
 	const updateLocationId = useLocationStore((state) => state.updateLocationId);
+	const updateLocationData = useLocationStore((state) => state.updateLocationData);
 
 	const { isLoading, isError, data } = useFetch(
 		"location/search",
@@ -83,11 +84,23 @@ const Search = () => {
 		setSubmittedTerm("");
 		setLocationId(id);
 		updateLocationId(id);
-		console.log(id);
+		// console.log(id);
 	};
 
-	data && console.log("Search Data:", data);
-	detailsData && console.log("Details Data:", detailsData);
+	// data && console.log("Search Data:", data);
+	// detailsData && console.log("Details Data:", detailsData);
+
+	const updateLocationState = (object) => {
+		if (object) {
+			const { location_id: locationId, latitude, longitude } = object;
+			updateLocationData(locationId, latitude, longitude);
+			// console.log(locationId, latitude, longitude);
+		}
+	};
+
+	useEffect(() => {
+		updateLocationState(detailsData);
+	}, [detailsData]);
 
 	return (
 		<>
@@ -155,7 +168,7 @@ const Search = () => {
 										detailsData.category.name === "hotel"
 											? "text-emerald-600 bg-emerald-100"
 											: detailsData.category.name === "restaurant"
-											? "text-amber-600 bg-amber-100 border"
+											? "text-amber-600 bg-amber-100"
 											: detailsData.category.name === "attraction"
 											? "text-purple-600 bg-purple-100"
 											: ""

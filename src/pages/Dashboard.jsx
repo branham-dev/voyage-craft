@@ -35,13 +35,13 @@ const Dashboard = () => {
 		[TbListDetails, `/dashboard/details/${locationId}`, "View Details"],
 		[FaPhotoFilm, `/dashboard/photos/${locationId}`, "Location Photos"],
 		[MdOutlineReviews, `/dashboard/reviews/${locationId}`, "User Reviews"],
-		[GrMapLocation, "/", "Nearby Search"],
+		[GrMapLocation, `/dashboard/nearby/${locationId}`, "Nearby Search"],
 	];
 
 	return (
 		<>
-			<div className='relative'>
-				<header className='bg-deep-blue p-[1px] w-full'>
+			<div className='relative h-[100vh] overflow-hidden'>
+				<header className='bg-deep-blue p-[1px] w-full h-[7%]'>
 					<nav className='flex justify-between items-center cus-w'>
 						<div>
 							<img src={Logo} alt='' className='w-24 -mt-2 -ml-2' />
@@ -61,7 +61,7 @@ const Dashboard = () => {
 						<div className='hidden md:block'></div>
 					</nav>
 				</header>
-				<main className='w-full'>
+				<main className='w-full h-[93%] overflow-auto'>
 					<aside
 						className={`${
 							isOpen.sidebar ? "w-full" : "w-0"
@@ -92,11 +92,11 @@ const Dashboard = () => {
 							<Button text={"Logout"} className={"bg-gray-300 text-deep-blue mx-auto mt-12"} />
 						</div>
 					</aside>
-					<div className='flex'>
+					<div className='flex h-full'>
 						<aside
 							className={`${
 								isOpen.sidenav ? "w-[325px]" : "w-18"
-							}  h-screen bg-deep-blue p-[1px] transition-all duration-500 hidden md:block`}>
+							}  h-full bg-deep-blue p-[1px] transition-all duration-500 hidden md:block`}>
 							<div className={`w-[80%] mx-auto flex flex-col justify-center items-center mt-4`}>
 								<div
 									className={` transition-all duration-700 top-0 w-full ${
@@ -130,7 +130,9 @@ const Dashboard = () => {
 								</div>
 							</div>
 						</aside>
-						<Outlet />
+						<div className='bg-slate-50 w-full h-full overflow-auto'>
+							<Outlet />
+						</div>
 					</div>
 					<section className='fixed bottom-0 w-[90%] h-12rem bg-deep-blue left-[50%] -translate-[50%] py-3 px-4 rounded text-gray-400 md:hidden shadow-md border border-secondary'>
 						<nav className='flex justify-around'>
