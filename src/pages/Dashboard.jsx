@@ -12,6 +12,7 @@ import { MdOutlineReviews } from "react-icons/md";
 import { GrMapLocation } from "react-icons/gr";
 import { NavLink, Outlet } from "react-router-dom";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
+import useLocationStore from "../stores/useLocationStore";
 
 const Dashboard = () => {
 	const [isOpen, setIsOpen] = useState({
@@ -19,6 +20,8 @@ const Dashboard = () => {
 		// navRoutes: true,
 		sidenav: false,
 	});
+
+	const locationId = useLocationStore((state) => state.locationId);
 
 	const dashboardNavList = [
 		["Dashboard", "/"],
@@ -28,9 +31,9 @@ const Dashboard = () => {
 	];
 
 	const appNavigation = [
-		[TbMapSearch, "/", "Search Destination"],
-		[TbListDetails, "/dashboard/details/123", "View Details"],
-		[FaPhotoFilm, "/", "Location Photos"],
+		[TbMapSearch, `/dashboard`, "Search Destination"],
+		[TbListDetails, `/dashboard/details/${locationId}`, "View Details"],
+		[FaPhotoFilm, `/`, "Location Photos"],
 		[MdOutlineReviews, "/", "User Reviews"],
 		[GrMapLocation, "/", "Nearby Search"],
 	];

@@ -6,3 +6,5 @@ const useLocationStore = create((set) => ({
 		set({ locationId: id });
 	},
 }));
+
+export default useLocationStore;

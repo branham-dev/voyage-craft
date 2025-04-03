@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import axios from "axios";
 import { Button } from "../components";
 import { useQueryClient } from "@tanstack/react-query";
+import useLocationStore from "../stores/useLocationStore";
 
 const getLocationDetails = async (id) => {
 	try {
@@ -20,7 +21,11 @@ const Search = () => {
 	// | TODO
 	// const [locationData, setLocationData] = useState([]);
 
-	const [locationId, setLocationId] = useState("");
+	const stateLocationId = useLocationStore((state) => state.locationId);
+
+	const [locationId, setLocationId] = useState(stateLocationId);
+
+	const updateLocationId = useLocationStore((state) => state.updateLocationId);
 
 	const { isLoading, isError, data } = useFetch(
 		"location/search",
@@ -30,7 +35,7 @@ const Search = () => {
 					// category: "attraction",
 			  }
 			: null,
-		{ enabled: !!submittedTerm },
+		{ enabled: !!submittedTerm, staleTime: Infinity },
 	);
 
 	const {
@@ -77,6 +82,7 @@ const Search = () => {
 	const loadLocation = (id) => {
 		setSubmittedTerm("");
 		setLocationId(id);
+		updateLocationId(id);
 		console.log(id);
 	};
 
@@ -131,8 +137,10 @@ const Search = () => {
 				</div>
 				{/* Display location details */}
 				<div className='w-[80%] mx-auto mt-12'>
-					{isDetailsLoading && <p className='text-emerald-500 font-semibold'>Loading details...</p>}
-					{isDetailsError && <p>There was an error fetching details</p>}
+					{isDetailsLoading && <p className='text-emerald-500 font-semibold'>Loading locations...</p>}
+					{isDetailsError && (
+						<p className='text-red-500 font-semibold'>There was an error loading locations</p>
+					)}
 					{detailsData && (
 						<div className='py-4 px-6 bg-white shadow-md rounded-md'>
 							<div className='flex justify-between items-center'>
@@ -142,7 +150,16 @@ const Search = () => {
 										{detailsData.address_obj.city}, {detailsData.address_obj.country}
 									</p>
 								</div>
-								<p className='text-emerald-600 w-fit px-4 rounded-md text-sm/6 bg-emerald-100 font-medium'>
+								<p
+									className={`${
+										detailsData.category.name === "hotel"
+											? "text-emerald-600 bg-emerald-100"
+											: detailsData.category.name === "restaurant"
+											? "text-amber-600 bg-amber-100 border"
+											: detailsData.category.name === "attraction"
+											? "text-purple-600 bg-purple-100"
+											: ""
+									} w-fit px-4 rounded-md text-sm/6  font-medium`}>
 									{detailsData.category.name}
 								</p>
 							</div>
