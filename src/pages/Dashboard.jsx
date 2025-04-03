@@ -34,7 +34,7 @@ const Dashboard = () => {
 		[TbMapSearch, `/dashboard`, "Search Destination"],
 		[TbListDetails, `/dashboard/details/${locationId}`, "View Details"],
 		[FaPhotoFilm, `/dashboard/photos/${locationId}`, "Location Photos"],
-		[MdOutlineReviews, "/", "User Reviews"],
+		[MdOutlineReviews, `/dashboard/reviews/${locationId}`, "User Reviews"],
 		[GrMapLocation, "/", "Nearby Search"],
 	];
 
