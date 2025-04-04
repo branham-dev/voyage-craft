@@ -41,11 +41,13 @@ const Dashboard = () => {
 	return (
 		<>
 			<div className='relative h-[100vh] overflow-hidden'>
-				<header className='bg-deep-blue p-[1px] w-full h-[7%]'>
+				<header className='bg-deep-blue p-[1px] w-full h-[10%]'>
 					<nav className='flex justify-between items-center cus-w'>
-						<Link to={"/"}>
-							<img src={Logo} alt='' className='w-24 -mt-2 -ml-2' />
-						</Link>
+						<div>
+							<Link to={"/"}>
+								<img src={Logo} alt='' className='w-28 -mt-2 -ml-2' />
+							</Link>
+						</div>
 						<div className='md:hidden transition-all duration-700'>
 							{!isOpen.sidebar && (
 								<button onClick={() => setIsOpen({ ...isOpen, sidebar: true })} className=''>
@@ -61,7 +63,7 @@ const Dashboard = () => {
 						<div className='hidden md:block'></div>
 					</nav>
 				</header>
-				<main className='w-full h-[93%] overflow-auto'>
+				<main className='w-full h-[90%] overflow-auto'>
 					<aside
 						className={`${
 							isOpen.sidebar ? "w-full" : "w-0"
@@ -95,7 +97,7 @@ const Dashboard = () => {
 					<div className='flex h-full'>
 						<aside
 							className={`${
-								isOpen.sidenav ? "w-[325px]" : "w-18"
+								isOpen.sidenav ? "w-[425px]" : "w-18"
 							}  h-full bg-deep-blue p-[1px] transition-all duration-500 hidden md:block`}>
 							<div className={`w-[80%] mx-auto flex flex-col justify-center items-center mt-4`}>
 								<div

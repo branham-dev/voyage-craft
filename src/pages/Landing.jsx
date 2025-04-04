@@ -7,7 +7,7 @@ const Landing = () => {
 			<main className='mb-24'>
 				<Features />
 				<TopDestinations />
-				<FetchTest />
+				{/* <FetchTest /> */}
 			</main>
 			<Footer />
 		</div>
