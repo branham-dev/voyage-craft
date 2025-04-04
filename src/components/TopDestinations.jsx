@@ -7,12 +7,16 @@ import { IoMdStar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 const fetchDetails = async (id) => {
-	const { data } = await axios.get(`http://localhost:5000/api/tripadvisor/location/${id}/details`);
+	const { data } = await axios.get(
+		`https://voyage-craft-proxy.onrender.com/api/tripadvisor/location/${id}/details`,
+	);
 	return data;
 };
 
 const fetchPhotos = async (id) => {
-	const { data } = await axios.get(`http://localhost:5000/api/tripadvisor/location/${id}/photos`);
+	const { data } = await axios.get(
+		`https://voyage-craft-proxy.onrender.com/api/tripadvisor/location/${id}/photos`,
+	);
 	return data;
 };
 

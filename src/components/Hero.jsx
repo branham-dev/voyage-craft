@@ -12,7 +12,7 @@ const Hero = () => {
 
 	return (
 		<div className='relative'>
-			<header className='bg-[url(src/assets/images/hero-image.png)] w-full max-h-[930px] h-[65vh] md:h-[75vh] lg:h-[85vh] xl:h-[100vh] bg-right bg-cover relative'>
+			<header className='bg-[url(/images/hero-image.png)] w-full max-h-[930px] h-[65vh] md:h-[75vh] lg:h-[85vh] xl:h-[100vh] bg-right bg-cover relative'>
 				<div className='absolute w-full h-full bg-black/68 text-amber-50 pointer-events-auto'>
 					<div className='mt-12'>
 						<div className='cus-w'>
