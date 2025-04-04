@@ -1,5 +1,7 @@
 # Voyage Craft
 
+[Backend-Proxy-Repo](https://github.com/branham-dev/voyage-craft-proxy)
+
 # ✈️ Travel Planner – TripAdvisor API Integration
 
 This is a frontend application that leverages the [Tripadvisor Content API](https://developer-tripadvisor.com/content-api/) to help users discover hotels, restaurants, attractions, and experiences by location. The project includes a custom backend proxy server to securely handle requests and manage API access.
