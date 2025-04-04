@@ -1,11 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import LandingNavbar from "./LandingNavbar";
 
 const Hero = () => {
+	const navigate = useNavigate();
+
+	const navToSignIn = () => {
+		// console.log("Here!");
+		navigate("/sign-in");
+	};
+
 	return (
 		<div className='relative'>
 			<header className='bg-[url(src/assets/images/hero-image.png)] w-full max-h-[930px] h-[65vh] md:h-[75vh] lg:h-[85vh] xl:h-[100vh] bg-right bg-cover relative'>
-				<div className='absolute w-full h-full bg-black/68 text-amber-50'>
+				<div className='absolute w-full h-full bg-black/68 text-amber-50 pointer-events-auto'>
 					<div className='mt-12'>
 						<div className='cus-w'>
 							<LandingNavbar />
@@ -16,7 +24,11 @@ const Hero = () => {
 								Discover top-rated hotels, attractions, and restaurants effortlessly. Plan your perfect trip
 								with real reviews, stunning photos, and nearby recommendations.
 							</p>
-							<Button text={"Start Exploring"} className={"mt-6 sm:mt-8 font-medium "} />
+							<Button
+								text={"Start Exploring"}
+								className={"mt-6 sm:mt-8 font-medium "}
+								onClick={navToSignIn}
+							/>
 						</div>
 					</div>
 				</div>

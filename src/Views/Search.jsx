@@ -88,7 +88,7 @@ const Search = () => {
 	};
 
 	// data && console.log("Search Data:", data);
-	// detailsData && console.log("Details Data:", detailsData);
+	detailsData && console.log("Details Data:", detailsData);
 
 	const updateLocationState = (object) => {
 		if (object) {

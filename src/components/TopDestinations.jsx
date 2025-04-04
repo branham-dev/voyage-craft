@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FiHeart } from "react-icons/fi";
 import Button from "./Button";
 import { IoMdStar } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const fetchDetails = async (id) => {
 	const { data } = await axios.get(`http://localhost:5000/api/tripadvisor/location/${id}/details`);
@@ -19,6 +20,13 @@ const TopDestinations = () => {
 	const featuredIds = ["4091780", "13320787", "10187804", "2225731", "571999", "93559"];
 
 	const [imageIndex, setImageIndex] = useState(0);
+
+	const navigate = useNavigate();
+
+	const navToSignIn = () => {
+		// console.log("Here!");
+		navigate("/sign-in");
+	};
 
 	const queries =
 		useQueries({
@@ -115,7 +123,11 @@ const TopDestinations = () => {
 									<span className='text-brand font-semibold text-lg'>{details.price_level || "N/A"}</span>{" "}
 									/night
 								</p>
-								<Button text={"View Details"} className={"text-off-white font-bold"} />
+								<Button
+									text={"View Details"}
+									className={"text-off-white font-bold"}
+									onClick={navToSignIn}
+								/>
 							</div>
 						</div>
 					)}

@@ -31,3 +31,7 @@
 .heading-2 {
 	@apply text-3xl font-playfair text-deep-blue;
 }
+
+.dashboard-headings {
+	@apply text-[1.8rem] text-slate-800 font-medium mb-4;
+}

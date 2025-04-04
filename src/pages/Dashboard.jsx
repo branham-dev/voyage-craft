@@ -10,7 +10,7 @@ import { TbListDetails, TbMapSearch } from "react-icons/tb";
 import { FaPhotoFilm } from "react-icons/fa6";
 import { MdOutlineReviews } from "react-icons/md";
 import { GrMapLocation } from "react-icons/gr";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 import useLocationStore from "../stores/useLocationStore";
 
@@ -43,9 +43,9 @@ const Dashboard = () => {
 			<div className='relative h-[100vh] overflow-hidden'>
 				<header className='bg-deep-blue p-[1px] w-full h-[7%]'>
 					<nav className='flex justify-between items-center cus-w'>
-						<div>
+						<Link to={"/"}>
 							<img src={Logo} alt='' className='w-24 -mt-2 -ml-2' />
-						</div>
+						</Link>
 						<div className='md:hidden transition-all duration-700'>
 							{!isOpen.sidebar && (
 								<button onClick={() => setIsOpen({ ...isOpen, sidebar: true })} className=''>

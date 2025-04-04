@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Airplane from "../assets/images/airplane.jpg";
 import { Button } from "../components";
 
 const SignIn = () => {
 	const inputUtilities = `border rounded-sm text-[1.25rem] text-gray-600 border-gray-300 placeholder:text-[1rem] pl-1 pb-1 outline-none w-full`;
+	const navigate = useNavigate();
 	return (
 		<main className='h-screen'>
 			<div className='bg-[url(./assets/images/airplane.jpg)] w-fill h-full pt-1 flex justify-center items-center'>
@@ -21,7 +23,12 @@ const SignIn = () => {
 							<p className='mb-2'>Password:</p>
 							<input type='password' className={inputUtilities} placeholder='Enter your password' />
 						</label>
-						<Button text={"Sign In"} type={"submit"} className={"text-off-white mx-auto w-full"} />
+						<Button
+							text={"Sign In"}
+							type={"submit"}
+							className={"text-off-white mx-auto w-full"}
+							onClick={() => navigate("/dashboard")}
+						/>
 					</form>
 				</div>
 			</div>
